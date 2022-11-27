@@ -21,9 +21,10 @@ func main() {
 	ebiten.SetTPS(ebiten.SyncWithFPS)
 
 	gg := &Game{
-		mgr:            mgr,
-		deviceScale:    ebiten.DeviceScaleFactor(),
-		demoWindowOpen: true,
+		mgr:               mgr,
+		deviceScale:       ebiten.DeviceScaleFactor(),
+		demoWindowOpen:    true,
+		metricsWindowOpen: true,
 	}
 
 	ebiten.RunGame(gg)
@@ -32,11 +33,12 @@ func main() {
 type Game struct {
 	mgr *renderer.Manager
 
-	deviceScale    float64
-	retina         bool
-	w, h           int
-	demoWindowOpen bool
-	consoleOutput  []string
+	deviceScale       float64
+	retina            bool
+	w, h              int
+	demoWindowOpen    bool
+	metricsWindowOpen bool
+	consoleOutput     []string
 }
 
 func (game *Game) Draw(screen *ebiten.Image) {
@@ -91,6 +93,7 @@ func (game *Game) Update() error {
 	{
 		imgui.Checkbox("Retina", &game.retina)
 		imgui.Checkbox("Demo window", &game.demoWindowOpen)
+		imgui.Checkbox("Metrics window", &game.metricsWindowOpen)
 	}
 	imgui.End()
 
@@ -111,6 +114,10 @@ func (game *Game) Update() error {
 	// demo window (WARNING: this crashes a lot :p)
 	if game.demoWindowOpen {
 		imgui.ShowDemoWindow(&game.demoWindowOpen)
+	}
+
+	if game.metricsWindowOpen {
+		imgui.ShowMetricsWindow(&game.metricsWindowOpen)
 	}
 
 	game.mgr.EndFrame()
