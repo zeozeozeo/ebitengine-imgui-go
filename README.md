@@ -2,6 +2,12 @@
 
 This uses a [fork](https://github.com/zeozeozeo/imgui) of the version by [Splizard](https://github.com/Splizard), which adds some minor changes to it.
 
+[![Example](https://github.com/zeozeozeo/ebitengine-imgui-go/blob/main/internal/example/example.gif?raw=true)](https://zeozeozeo.github.io/ebitengine-imgui-go/internal/example)
+
+# [Live demo](https://zeozeozeo.github.io/ebitengine-imgui-go/internal/example)
+
+# [Example](https://github.com/zeozeozeo/ebitengine-imgui-go/blob/main/internal/example/main.go)
+
 # Benefits of not using CGo
 
 -   Cross-compilation
