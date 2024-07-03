@@ -3,7 +3,7 @@ module github.com/zeozeozeo/ebitengine-imgui-go
 go 1.19
 
 require (
-	github.com/hajimehoshi/ebiten/v2 v2.7.5
+	github.com/hajimehoshi/ebiten/v2 v2.7.6
 	github.com/zeozeozeo/imgui v0.0.0-20221130185656-4f2288df11b4
 )
 
